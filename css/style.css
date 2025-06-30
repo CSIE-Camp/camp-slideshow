@@ -1,0 +1,344 @@
+@font-face {
+  font-family: 'Cubic_11';
+  src: url('../assets/font/Cubic_11.ttf') format('truetype');
+}
+
+body,
+html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  font-family: 'Cubic_11', sans-serif;
+}
+
+#slideshow-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-image: url('../assets/background.png');
+  background-size: cover;
+  background-position: center;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+  visibility: hidden;
+}
+
+.slide.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.slide-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: white;
+}
+
+/* Slide 1: Main Visual */
+#slide1 .slide-content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title-container {
+  width: 100vw;
+  height: 40vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+.title-text {
+  font-size: 3.4vw;
+  white-space: nowrap;
+  flex: 1 1 33%;
+  text-align: center;
+  z-index: 1;
+  letter-spacing: 0.03em;
+}
+
+.title-text:first-of-type {
+  text-align: right;
+  margin-right: 0vw;
+}
+
+.title-text:last-of-type {
+  text-align: left;
+  margin-left: 0vw;
+}
+
+.floating-cube {
+  width: 13vw;
+  min-width: 350px;
+  max-width: 350px;
+  flex: 0 0 auto;
+  z-index: 2;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+/* Slide 2 & 3: Sponsors */
+#slide2 .slide-content,
+#slide3 .slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  height: 100%;
+  padding-top: 12vh;
+  padding-bottom: 8vh;
+  box-sizing: border-box;
+}
+
+#slide2 h2,
+#slide3 h2 {
+  font-size: 5em;
+  margin-bottom: 50px;
+  margin-top: 0;
+  letter-spacing: .6em;
+  text-align: center;
+  margin-right: -0.6em;
+  font-weight: normal;
+}
+
+.sponsor-logo {
+  max-width: 80%;
+  max-height: 400px;
+  background-color: white;
+  border-radius: 15px;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+/* Slide 4: Countdown */
+.container {
+  text-align: center;
+}
+
+.countdown-wrapper {
+  padding: 28px;
+}
+
+.title {
+  font-size: 3rem;
+  margin-bottom: 2rem;
+  margin-top: 0rem;
+  letter-spacing: 5px;
+}
+
+.countdown-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 3rem;
+}
+
+.countdown-unit {
+  text-align: center;
+  margin: 0 10px;
+  border: 2px solid white;
+  border-radius: 15px;
+  padding: 20px 30px;
+  background-color: black;
+  width: 120px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.countdown-value {
+  font-size: 4rem;
+  font-weight: bold;
+  line-height: 1;
+  transition: all 0.3s ease-in-out;
+  text-shadow: 0 0 10px rgba(255,255,255,.7);
+}
+
+.countdown-label {
+  font-size: 1.5rem;
+  margin-top: 10px;
+}
+
+.countdown-separator {
+  font-size: 3rem;
+  line-height: 1;
+  padding: 0 10px;
+}
+
+.flash {
+  animation: flash-animation 0.5s;
+}
+
+@keyframes flash-animation {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.1);
+    opacity: 0.7;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Slide 5: Physics Animation */
+#falling-objects-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.falling-object {
+  position: absolute;
+}
+
+/* Slide 6: Dino Animation */
+#dino {
+  position: absolute;
+  bottom: 50px;
+  left: -100px;
+  /* Start off-screen */
+  width: 100px;
+  animation: run-and-jump 5s linear infinite;
+}
+
+@keyframes run-and-jump {
+  0% {
+    left: -100px;
+    transform: translateY(0);
+  }
+
+  20% {
+    transform: translateY(-50px);
+    /* Jump up */
+  }
+
+  40% {
+    transform: translateY(0);
+    /* Land */
+  }
+
+  60% {
+    transform: translateY(-30px);
+    /* Smaller jump */
+  }
+
+  80% {
+    transform: translateY(0);
+    /* Land */
+  }
+
+  100% {
+    left: 100%;
+    /* Move across the screen */
+    transform: translateY(0);
+  }
+}
+
+/* Transitions */
+.slide.transition-slide-up {
+  animation: slide-up 1s forwards;
+}
+
+.slide.transition-slide-down {
+  animation: slide-down 1s forwards;
+}
+
+.slide.transition-slide-left {
+  animation: slide-left 1s forwards;
+}
+
+.slide.transition-slide-right {
+  animation: slide-right 1s forwards;
+}
+
+.slide.transition-fade {
+  animation: fade-in 1s forwards;
+}
+
+@keyframes slide-up {
+  from {
+    transform: translateY(100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-down {
+  from {
+    transform: translateY(-100%);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes slide-left {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide-right {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}

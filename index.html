@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slideshow</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div id="slideshow-container">
+        <!-- Slide 1: Main Visual -->
+        <div class="slide" id="slide1">
+            
+            <div class="slide-content">
+                <div class="title-container">
+                    <span class="title-text">2025 臺師大資工營</span>
+                    <img src="assets/cube.png" alt="cube" class="floating-cube">
+                    <span class="title-text">資遊你和我的師界</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 2: Sponsor 1 -->
+        <div class="slide" id="slide2">
+            
+            <div class="slide-content">
+                <h2>特別感謝</h2>
+                <img src="assets/sponsor/SuDo.png" alt="Sponsor 1 Logo" class="sponsor-logo">
+            </div>
+        </div>
+
+        <!-- Slide 3: Sponsor 2 -->
+        <div class="slide" id="slide3">
+            
+            <div class="slide-content">
+                <h2>特別感謝</h2>
+                <img src="assets/sponsor/raingo.png" alt="Sponsor 2 Logo" class="sponsor-logo">
+            </div>
+        </div>
+
+        <!-- Slide 4: Countdown -->
+        <div class="slide" id="slide4">
+            
+            <div class="slide-content">
+                <div class="container">
+                    <div class="countdown-wrapper">
+                        <p class="title" id="countdown-title">距離好吃的晚餐時間剩餘</p>
+                        <div class="countdown-container">
+                            <div class="countdown-unit">
+                                <div class="countdown-value" id="days">0</div>
+                                <div class="countdown-label">天</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-unit">
+                                <div class="countdown-value" id="hours">0</div>
+                                <div class="countdown-label">時</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-unit">
+                                <div class="countdown-value" id="minutes">0</div>
+                                <div class="countdown-label">分</div>
+                            </div>
+                            <div class="countdown-separator">:</div>
+                            <div class="countdown-unit">
+                                <div class="countdown-value" id="seconds">0</div>
+                                <div class="countdown-label">秒</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 5: Physics Animation -->
+        <div class="slide" id="slide5">
+            
+            <div id="falling-objects-container"></div>
+        </div>
+
+        <!-- Slide 6: Dino Animation -->
+        <div class="slide" id="slide6">
+            
+            <div class="slide-content">
+                <img src="assets/dino.png" alt="dino" id="dino">
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.18.0/matter.min.js"></script>
+    <script src="js/script.js"></script>
+</body>
+</html>
