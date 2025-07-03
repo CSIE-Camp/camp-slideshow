@@ -43,12 +43,57 @@ document.addEventListener('DOMContentLoaded', () => {
         if (slides[index].id === 'slide-next-activity') {
             updateNextActivity();
         }
+
+        // Special handling for next activity slide
+        if (slides[index].id === 'slide-next-activity') {
+            updateNextActivity();
+        }
     }
 
     function nextSlide() {
         currentSlideIndex = (currentSlideIndex + 1) % slides.length;
         showSlide(currentSlideIndex);
         setTimeout(nextSlide, slides[currentSlideIndex].duration);
+    }
+
+    // --- Slide: Next Activity ---
+    const nextActivityNameEl = document.getElementById('next-activity-name');
+    const nextActivityTimeEl = document.getElementById('next-activity-time');
+    const schedule = [
+        { time: new Date('2025-07-03T13:30:00'), name: '選修課程' },
+        { time: new Date('2025-07-03T15:10:00'), name: '黑客松時間' },
+        { time: new Date('2025-07-03T17:30:00'), name: '晚餐時間' },
+        { time: new Date('2025-07-03T19:00:00'), name: '鑰匙掉了' },
+        { time: new Date('2025-07-03T21:00:00'), name: '黑客松時間' },
+        { time: new Date('2025-07-03T22:30:00'), name: '返回飯店' },
+        { time: new Date('2025-07-04T09:10:00'), name: '哈哈是我啦' },
+        { time: new Date('2025-07-04T09:40:00'), name: '黑客松時間' },
+        { time: new Date('2025-07-04T13:10:00'), name: '黑客松報告' },
+        { time: new Date('2025-07-04T14:40:00'), name: '結戲' },
+        { time: new Date('2025-07-04T15:10:00'), name: '頒獎' },
+        { time: new Date('2025-07-04T16:40:00'), name: '拍照' },
+        { time: new Date('2025-07-04T17:00:00'), name: '掰掰' },
+    ];
+
+    function updateNextActivity() {
+        const now = new Date();
+        let nextActivity = null;
+
+        for (const event of schedule) {
+            if (event.time > now) {
+                nextActivity = event;
+                break;
+            }
+        }
+
+        if (nextActivity) {
+            nextActivityNameEl.textContent = nextActivity.name;
+            const timeOptions = { hour: '2-digit', minute: '2-digit', hour12: false };
+            nextActivityTimeEl.textContent = nextActivity.time.toLocaleTimeString('zh-TW', timeOptions);
+        } else {
+            nextActivityNameEl.textContent = '營期活動已全部結束！';
+            nextActivityTimeEl.textContent = '';
+        }
     }
 
     // --- Slide: Next Activity ---
