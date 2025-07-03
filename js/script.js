@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { id: 'slide3', duration: 10000, transition: 'fade' },
         { id: 'slide4', duration: 15000, transition: 'slide-up' },
         { id: 'slide-next-activity', duration: 15000, transition: 'fade' },
-        //{ id: 'slide5', duration: 40000, transition: 'fade' },
+        //{ id: 'slide5', duration: 40000, transition: 'fade' }, // to be fix
         //{ id: 'slide6', duration: 60000, transition: 'none' },
     ];
 
