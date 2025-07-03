@@ -140,6 +140,53 @@ html {
   box-sizing: border-box;
 }
 
+/* Slide Next Activity */
+.next-activity-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.next-activity-label {
+  font-size: 2.5rem;
+  margin: 0;
+  color: #eee;
+}
+
+#next-activity-name {
+  font-size: 5rem;
+  margin: 0;
+  font-weight: bold;
+  text-shadow: 0 0 15px rgba(255,255,255,.8);
+  letter-spacing: .2em; /* Add letter spacing */
+  margin-right: -.3em; /* Compensate for last letter */
+  animation: pulse 2s infinite ease-in-out;
+}
+
+#next-activity-time {
+  font-size: 3rem;
+  margin: 2rem 0;
+  color: #ddd;
+  animation: pulse 2s infinite ease-in-out;
+  animation-delay: 0.5s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  }
+  50% {
+    transform: scale(1.05);
+    text-shadow: 0 0 25px rgba(255, 255, 255, 1);
+  }
+  100% {
+    transform: scale(1);
+    text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+  }
+}
+
 /* Slide 4: Countdown */
 .container {
   text-align: center;
