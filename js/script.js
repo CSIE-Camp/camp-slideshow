@@ -196,7 +196,9 @@ document.addEventListener('DOMContentLoaded', () => {
         { src: 'assets/dice.png', min: 10, max: 25 },
         { src: 'assets/earth.png', min: 10, max: 25 },
         { src: 'assets/email.png', min: 10, max: 25 },
-        { src: 'assets/image-icon.png', min: 10, max: 25 }
+        { src: 'assets/image-icon.png', min: 10, max: 25 },
+        { src: 'assets/computer.png', min: 10, max: 25 },
+        { src: 'assets/mushroom.png', min: 10, max: 25 },
     ];
 
     function initPhysicsAnimation() {
