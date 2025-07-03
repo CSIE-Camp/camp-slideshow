@@ -1,11 +1,11 @@
 document.addEventListener('DOMContentLoaded', () => {
     const slides = [
-        { id: 'slide1', duration: 2000, transition: 'fade' }, //fade, slide-left, slide-right, slide-up, none
-        { id: 'slide2', duration: 1000, transition: 'fade' },
-        { id: 'slide3', duration: 1000, transition: 'fade' },
-        { id: 'slide4', duration: 1000, transition: 'slide-up' },
-        { id: 'slide-next-activity', duration: 60000, transition: 'fade' },
-        { id: 'slide5', duration: 4000, transition: 'fade' },
+        { id: 'slide1', duration: 20000, transition: 'fade' }, //fade, slide-left, slide-right, slide-up, none
+        { id: 'slide2', duration: 10000, transition: 'fade' },
+        { id: 'slide3', duration: 10000, transition: 'fade' },
+        { id: 'slide4', duration: 10000, transition: 'slide-up' },
+        { id: 'slide-next-activity', duration: 10000, transition: 'fade' },
+        { id: 'slide5', duration: 40000, transition: 'fade' },
         //{ id: 'slide6', duration: 60000, transition: 'none' },
     ];
 
