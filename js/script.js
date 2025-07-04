@@ -107,7 +107,7 @@ document.addEventListener('DOMContentLoaded', () => {
         { target: new Date('2025-07-01T10:00:00'), title: '距離活動開始剩餘' },
         { target: new Date('2025-07-01T17:40:00'), title: '距離好吃的晚餐剩餘' },
         { target: new Date('2025-07-01T21:10:00'), title: '距離黑客松開幕剩餘' },
-        { target: new Date('2025-07-04T13:10:00'), title: '距離黑客松結束剩餘' },
+        { target: new Date('2025-07-04T12:50:00'), title: '距離黑客松結束剩餘' },
         { target: new Date('2025-07-04T17:00:00'), title: '距離活動結束剩餘' }
     ];
 
